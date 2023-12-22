@@ -1,0 +1,5 @@
+name: WowPacket
+main: be.dreamnetwork.Main
+version: 1.0
+depend:
+  - DreamNetwork-Core

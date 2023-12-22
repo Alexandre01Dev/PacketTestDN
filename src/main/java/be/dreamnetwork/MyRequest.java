@@ -1,6 +1,7 @@
 package be.dreamnetwork;
 
 import be.alexandre01.dnplugin.api.connection.request.packets.RequestExample;
+import be.alexandre01.dnplugin.api.utils.messages.Message;
 
 import java.lang.annotation.Annotation;
 
@@ -9,12 +10,14 @@ import java.lang.annotation.Annotation;
  ↬   done on 05/11/2023 at 11:53
 */
 @SuppressWarnings("all")
-public enum TestRequest implements RequestExample {
+public enum MyRequest implements RequestExample<MyRequestHandler> {
     MaRequeteCustom,
-    SendPlayer;
+    SendPlayer,
 
-    final String value;
-    TestRequest() {
+    HelloWorld;
+
+    final private String value;
+    MyRequest() {
         this.value = getProjectName() +"-"+ ordinal();
     }
 
@@ -26,10 +29,5 @@ public enum TestRequest implements RequestExample {
     @Override
     public String getProjectName() {
         return "Edalia";
-    }
-
-    @Override
-    public Class<? extends Annotation> annotationType() {
-        return null;
     }
 }

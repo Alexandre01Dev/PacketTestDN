@@ -1,4 +1,6 @@
-package be.alexandre01.dnplugin.api.connection.request.packets;
+package be.dreamnetwork;
+
+import be.alexandre01.dnplugin.api.connection.request.packets.RequestHandler;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -12,7 +14,7 @@ import java.lang.annotation.Target;
 @Target(value={ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MyRequestHandler {
-    TestRequest id();
+    MyRequest id();
     int priority() default 0;
     String[] channels() default {};
     RequestHandler.PacketCastOption castOption() default RequestHandler.PacketCastOption.NOT_SET;
